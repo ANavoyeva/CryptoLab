@@ -46,6 +46,7 @@ namespace DecryptApp
             // 
             this.secondMatrix.Location = new System.Drawing.Point(478, 103);
             this.secondMatrix.Name = "secondMatrix";
+            this.secondMatrix.ReadOnly = true;
             this.secondMatrix.Size = new System.Drawing.Size(226, 96);
             this.secondMatrix.TabIndex = 21;
             this.secondMatrix.Text = "";
@@ -54,6 +55,7 @@ namespace DecryptApp
             // 
             this.firstMatrix.Location = new System.Drawing.Point(246, 103);
             this.firstMatrix.Name = "firstMatrix";
+            this.firstMatrix.ReadOnly = true;
             this.firstMatrix.Size = new System.Drawing.Size(226, 96);
             this.firstMatrix.TabIndex = 20;
             this.firstMatrix.Text = "";
@@ -81,6 +83,7 @@ namespace DecryptApp
             // 
             this.decryptedText.Location = new System.Drawing.Point(12, 235);
             this.decryptedText.Name = "decryptedText";
+            this.decryptedText.ReadOnly = true;
             this.decryptedText.Size = new System.Drawing.Size(226, 96);
             this.decryptedText.TabIndex = 17;
             this.decryptedText.Text = "";
@@ -101,6 +104,7 @@ namespace DecryptApp
             this.inputText.Size = new System.Drawing.Size(226, 96);
             this.inputText.TabIndex = 15;
             this.inputText.Text = "";
+            this.inputText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputText_KeyPress);
             // 
             // secondKey
             // 
@@ -108,6 +112,7 @@ namespace DecryptApp
             this.secondKey.Name = "secondKey";
             this.secondKey.Size = new System.Drawing.Size(100, 23);
             this.secondKey.TabIndex = 14;
+            this.secondKey.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.secondKey_KeyPress);
             // 
             // label2
             // 
@@ -124,6 +129,7 @@ namespace DecryptApp
             this.firstKey.Name = "firstKey";
             this.firstKey.Size = new System.Drawing.Size(100, 23);
             this.firstKey.TabIndex = 12;
+            this.firstKey.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.firstKey_KeyPress);
             // 
             // label1
             // 

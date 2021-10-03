@@ -57,6 +57,7 @@ namespace CryptoLab
             this.firstKey.Name = "firstKey";
             this.firstKey.Size = new System.Drawing.Size(100, 23);
             this.firstKey.TabIndex = 1;
+            this.firstKey.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.firstKey_KeyPress);
             // 
             // secondKey
             // 
@@ -64,6 +65,7 @@ namespace CryptoLab
             this.secondKey.Name = "secondKey";
             this.secondKey.Size = new System.Drawing.Size(100, 23);
             this.secondKey.TabIndex = 3;
+            this.secondKey.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.secondKey_KeyPress);
             // 
             // label2
             // 
@@ -104,9 +106,11 @@ namespace CryptoLab
             // 
             this.encryptedText.Location = new System.Drawing.Point(10, 245);
             this.encryptedText.Name = "encryptedText";
+            this.encryptedText.ReadOnly = true;
             this.encryptedText.Size = new System.Drawing.Size(226, 96);
             this.encryptedText.TabIndex = 6;
             this.encryptedText.Text = "";
+            this.encryptedText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.encryptedText_KeyPress);
             // 
             // button1
             // 
@@ -122,6 +126,7 @@ namespace CryptoLab
             // 
             this.firstMatrix.Location = new System.Drawing.Point(244, 113);
             this.firstMatrix.Name = "firstMatrix";
+            this.firstMatrix.ReadOnly = true;
             this.firstMatrix.Size = new System.Drawing.Size(226, 96);
             this.firstMatrix.TabIndex = 9;
             this.firstMatrix.Text = "";
@@ -130,6 +135,7 @@ namespace CryptoLab
             // 
             this.secondMatrix.Location = new System.Drawing.Point(476, 113);
             this.secondMatrix.Name = "secondMatrix";
+            this.secondMatrix.ReadOnly = true;
             this.secondMatrix.Size = new System.Drawing.Size(226, 96);
             this.secondMatrix.TabIndex = 10;
             this.secondMatrix.Text = "";

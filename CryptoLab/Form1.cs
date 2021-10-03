@@ -18,11 +18,35 @@ namespace CryptoLab
 
             var inputString = inputText.Text;
 
-            var result = WhitsonsDoubleSquare.Encryption(firstKeyText,secondKeyText, inputString);
+            var result = WhitsonsDoubleSquare.Encryption(firstKeyText, secondKeyText, inputString);
 
             encryptedText.Text = result.result;
             firstMatrix.Text = result.firstMatrix;
             secondMatrix.Text = result.secondMatrix;
+        }
+
+        private void firstKey_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (InputSetup.IsAllowed(e))
+            {
+                return;
+            }
+        }
+
+        private void secondKey_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (InputSetup.IsAllowed(e))
+            {
+                return;
+            }
+        }
+
+        private void encryptedText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (InputSetup.IsAllowed(e))
+            {
+                return;
+            }
         }
     }
 }

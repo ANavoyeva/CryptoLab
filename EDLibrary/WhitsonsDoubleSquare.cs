@@ -56,6 +56,10 @@ namespace EDLibrary
         private static List<string> CreateChunks(string phraze)
         {
             phraze = phraze.Replace(" ", string.Empty);
+
+            if (phraze.Length % 2 != 0)
+                phraze += 'a';
+
             var chunks = new List<string>();
 
             for (var i = 0; i < phraze.Length; i += 2)

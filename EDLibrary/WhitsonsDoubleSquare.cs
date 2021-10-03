@@ -15,8 +15,8 @@ namespace EDLibrary
         {
             var matrixString = string.Concat(keyWord.ToLower(), Alphabet)
                 .Replace("j", "i")
-                .ToCharArray()
-                .Distinct()
+                .ToCharArray() //привожу к массиву символов
+                .Distinct() //удаляет повторяющиеся элементы
                 .ToArray();
 
             var reult = new char[MatrixSize, MatrixSize];
@@ -24,8 +24,8 @@ namespace EDLibrary
             for (var i = 0; i < MatrixSize; i++)
             {
                 var arrayToCoppy = matrixString
-                    .Skip(i * MatrixSize)
-                    .Take((i + 1) * MatrixSize)
+                    .Skip(i * MatrixSize) // пропускаем определленое кол-во элементов
+                    .Take(MatrixSize) //берём из массива 5 элементов
                     .ToArray();
 
                 for (var j = 0; j < MatrixSize; j++)
@@ -64,7 +64,7 @@ namespace EDLibrary
 
             for (var i = 0; i < phraze.Length; i += 2)
             {
-                chunks.Add(phraze.Substring(i, 2));
+                chunks.Add(phraze.Substring(i, 2));//выделение подстроки
             }
 
             return chunks;
@@ -116,10 +116,10 @@ namespace EDLibrary
         public static (string result, string firstMatrix, string secondMatrix) Encryption(string firstKey, string secondKey, string inputText)
         {
             var firstMatrix = GetMatrix(firstKey.Trim());
-            var secondMatrix = GetMatrix(secondKey.Trim());
+            var secondMatrix = GetMatrix(secondKey.Trim());//обрезать пробелы с концов
 
             var chunks = CreateChunks(inputText.Replace("j", "i").ToLower().Trim());
-            var result = new StringBuilder();
+            var result = new StringBuilder();//нужно для того, чтобы каждый раз не создавалась новая строка, а изменялась текущая
 
             for (var i = 0; i < chunks.Count; i++)
             {

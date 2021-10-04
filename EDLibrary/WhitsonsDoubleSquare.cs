@@ -128,13 +128,13 @@ namespace EDLibrary
 
                 if (firstSymbolRow == secondSymbolRow)
                 {
-                    result.Append(secondMatrix[secondSymbolRow, firstSymbolColumn]);
                     result.Append(firstMatrix[firstSymbolRow, secondSymbolColumn]);
+                    result.Append(secondMatrix[secondSymbolRow, firstSymbolColumn]);
                 }
                 else
                 {
-                    result.Append(secondMatrix[firstSymbolRow, secondSymbolColumn]);
                     result.Append(firstMatrix[secondSymbolRow, firstSymbolColumn]);
+                    result.Append(secondMatrix[firstSymbolRow, secondSymbolColumn]);
                 }
             }
 
@@ -156,13 +156,13 @@ namespace EDLibrary
 
                 if (firstSymbolRow == secondSymbolRow)
                 {
-                    result.Append(secondMatrix[secondSymbolRow, firstSymbolColumn]);
                     result.Append(firstMatrix[firstSymbolRow, secondSymbolColumn]);
+                    result.Append(secondMatrix[secondSymbolRow, firstSymbolColumn]);
                 }
                 else
                 {
-                    result.Append(secondMatrix[firstSymbolRow, secondSymbolColumn]);
                     result.Append(firstMatrix[secondSymbolRow, firstSymbolColumn]);
+                    result.Append(secondMatrix[firstSymbolRow, secondSymbolColumn]);
                 }
             }
 
